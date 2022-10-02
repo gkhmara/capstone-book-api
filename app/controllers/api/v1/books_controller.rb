@@ -5,6 +5,9 @@ module Api
 
       def index
         books = Book.all
+        books = books.where(author: params[:search]) if params[:search] != ""
+        books = books.sort_by{|e| e[params[:sort]]} if params[:sort] != ""
+
         render json: books
       end
 
