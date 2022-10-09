@@ -20,7 +20,8 @@ module Api
         book = Book.create(
           title: params[:title], 
           author: params[:author], 
-          rating: params[:rating]
+          rating: params[:rating],
+          cover: params[:cover]
         )
         render json: book
       end
@@ -30,7 +31,8 @@ module Api
         book.update(
           title: params[:title],
           author: params[:author],
-          rating: params[:rating]
+          rating: params[:rating],
+          cover: params[:cover]
         )
         render json: book
       end
